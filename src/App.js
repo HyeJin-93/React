@@ -1,12 +1,19 @@
+import React from 'react';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Homeview from './views/Homeview';
+import Sub1 from './views/Sub1';
+import Sub2 from './views/Sub2';
 
-import './App.css';
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      여기는 App 컴퍼넌트입니다.
-    </div>
-  );
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Homeview />} />
+            <Route path='/sub1' element={<Sub1 />} />
+            <Route path='/sub2' element={<Sub2 />} />
+        </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
